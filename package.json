@@ -1,0 +1,26 @@
+{
+  "name": "deepbeat",
+  "version": "1.0.0",
+  "description": "A simple discord music bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js",
+    "start": "node main.js",
+    "devStart": "nodemon main.js"
+  },
+  "author": "BlazerHeat",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.3",
+    "discord.js": "^12.4.1",
+    "ffmpeg-static": "^4.2.7",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.10.12",
+    "youtube-node": "^1.3.3",
+    "ytdl-core": "^3.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlazerHeat/DeepBeat"
+  }
+}
