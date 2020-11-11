@@ -3,6 +3,8 @@ class Command {
         name = " ",
         desc = " ",
         aliases = [],
+        usage = " ",
+        example = " ",
         guildOnly = false,
         ownerOnly = false,
         userPermissions = [],
@@ -13,6 +15,8 @@ class Command {
         this.name = name;
         this.desc = desc;
         this.aliases = aliases;
+        this.usage = usage;
+        this.example = example;
         this.guildOnly = guildOnly;
         this.ownerOnly = ownerOnly;
         this.userPermissions = userPermissions;

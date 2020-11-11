@@ -8,7 +8,7 @@ mongoose.connect(databaseURI, {
     useCreateIndex: true
 }, (err) => {
     if(err) return console.error(err);
-    else return console.log('Successfully connected to MongoDB!');
+    else return console.log('Successfully connected to Database!');
 });
 
 module.exports = mongoose;

@@ -5,7 +5,7 @@ let embed = new MessageEmbed();
 module.exports = {
 
     errorEmbed: (text = '-') => {
-        embed.setColor('#ff3000');
+        embed.setColor("#FF0000");
         embed.setDescription(text);
         return embed;
     },
@@ -25,6 +25,12 @@ module.exports = {
     loveEmbed: (text = '-') => {
         embed.setDescription(text);
         embed.setColor('#FF087F');
+        return embed;
+    },
+
+    warningEmbed: (text = '-') => {
+        embed.setDescription(text);
+        embed.setColor('#FFFF00');
         return embed;
     }
 

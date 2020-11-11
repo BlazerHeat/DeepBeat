@@ -1,15 +1,17 @@
 const Command = require('../../modules/command');
 const embeds = require('../../utils/embeds.js');
 
-class PlayCommand extends Command {
+class ResumeCommand extends Command {
     constructor(client){
         super(client, {
             name: 'resume',
-            desc: '',
+            desc: 'Resumes the paused player.',
+            usage: '{prefix}resume',
+            example: '{prefix}resume',
             aliases: ['start', 're', 'res', 'continue'],
             guildOnly: true,
-            clientPermission: ['CONNECT', 'SPEAK', 'EMBED_LINKS']
-        })
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+        });
     }
 
     run(client, message, args, prefix){
@@ -26,4 +28,4 @@ class PlayCommand extends Command {
     }
 }
 
-module.exports = PlayCommand;
+module.exports = ResumeCommand;

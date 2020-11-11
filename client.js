@@ -8,10 +8,15 @@ class Client extends DiscordClient {
         this.login(token).catch(console.error);
         this.commands = new Map();
         this.aliases = new Map();
+        this.on('error', console.error);
     }
     
     loadCommands(){
         return require('./handlers/command').loadCommands(this);
+    }
+
+    autoLeaveVoice(){
+        return require('./modules/autoLeaveVoice')(this);
     }
 }
 

@@ -35,12 +35,12 @@ module.exports.loadCommands = (client) => {
                 const CommandClass = require(`../commands/${folder}`);
                 const command = new CommandClass(client);
                 client.commands.set(command.name, command);
-                console.log(`${command.name} Loaded!`);
                 if(command.aliases && command.aliases.length !== 0){
                     command.aliases.forEach(alia => {
                         client.aliases.set(alia, command);
                     });
                 }
+                console.log(`${folder} command loaded`)
             }
             else {
                 fs.readdir('./commands/'+folder, (err, files) => {
@@ -49,7 +49,6 @@ module.exports.loadCommands = (client) => {
                         const CommandClass = require(`../commands/${folder}/${file}`);
                         const command = new CommandClass(client);
                         client.commands.set(command.name, command);
-                        console.log(`${command.name} Loaded!`);
                         if(command.aliases && command.aliases.length !== 0){
                             command.aliases.forEach(alia => {
                                 client.aliases.set(alia, command);
@@ -57,6 +56,7 @@ module.exports.loadCommands = (client) => {
                         }
                     });
                 });
+                console.log(`${folder} commands loaded`)
             }
         });
     });
@@ -81,7 +81,10 @@ module.exports.loadCommands = (client) => {
                 let botPermissions = message.guild.me.permissions;
 
                 let botMissingPermissions = botPermissions.missing(neededClientPermissons);
-                if (botMissingPermissions.length !== 0) {
+
+                if(botMissingPermissions.some(x => x == "EMBED_LINKS")) return message.channel.send('I need Embed Links permission to work.');
+
+                if (botMissingPermissions.length != 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **I** need the Following Permissions:\n\`${missingPermissions(botMissingPermissions)}\``));
                 }
 
@@ -89,12 +92,16 @@ module.exports.loadCommands = (client) => {
                 let userPermissions = message.member.permissions;
 
                 let userMissingPermissions = userPermissions.missing(neededUserPermissons);
-                if (message.author.id !== client.owner && userMissingPermissions.length !== 0) {
+                if (message.author.id != client.owner && userMissingPermissions.length != 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **YOU** need the Following Permissions:\n\`${missingPermissions(userMissingPermissions)}\``));
                 }
             }
-
-            return command.run(client, message, args, prefix);
+            try {
+                command.run(client, message, args, prefix);
+            } catch (err) {
+                message.channel.send(embeds.errorEmbed(':x: Error occured while executing the command: '+err.toString()))
+            }
+            return;
         } else {
             return message.channel.send(embeds.errorEmbed(':x: Command not found!'));
         };

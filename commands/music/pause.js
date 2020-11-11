@@ -1,15 +1,17 @@
 const Command = require('../../modules/command');
 const embeds = require('../../utils/embeds.js');
 
-class PlayCommand extends Command {
+class PauseCommand extends Command {
     constructor(client){
         super(client, {
             name: 'pause',
-            desc: '',
+            desc: 'Pause the player.',
+            usage: '{prefix}pause',
+            example: '{prefix}pause',
             aliases: ['stop'],
             guildOnly: true,
-            clientPermission: ['CONNECT', 'SPEAK', 'EMBED_LINKS']
-        })
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+        });
     }
 
     run(client, message, args, prefix){
@@ -22,8 +24,7 @@ class PlayCommand extends Command {
 
         dispatcher.pause();
         return message.channel.send(embeds.infoEmbed(':arrow_forward: Paused'));
-    
     }
 }
 
-module.exports = PlayCommand;
+module.exports = PauseCommand;
