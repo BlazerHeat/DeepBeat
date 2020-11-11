@@ -12,7 +12,7 @@ class Client extends DiscordClient {
     }
     
     loadCommands(){
-        return require('./handlers/command').loadCommands(this);
+        return require('./handlers/command')(this);
     }
 
     autoLeaveVoice(){

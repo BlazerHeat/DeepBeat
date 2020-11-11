@@ -22,7 +22,7 @@ function missingPermissions(array){
 }
 
 
-module.exports.loadCommands = (client) => {
+module.exports = (client) => {
 
     fs.readdir('./commands', (err, folders) => {
         if(err) return console.error(err);

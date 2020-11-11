@@ -27,7 +27,10 @@ class HelpCommand extends Command {
             if (!client.commands.has(commandName) && !client.aliases.has(commandName)) return message.channel.send(embeds.errorEmbed(':x: Command not found.'))
             let command = client.commands.get(commandName) || client.aliases.get(commandName);
 
-            help.setTitle(`Command - ${command.guildOnly ? command.name+" (Guild Only) " : command.name}`)
+            if(command.guildOnly) command.name += " (Guild Only)";
+            else if(command.ownerOnly) command.name += " (Owner Only)";
+
+            help.setTitle(`Command - ${command.name}`)
                 .setDescription(command.desc.replace('{prefix}', prefix))
                 .addField('Usage:', '```' + command.usage.replace('{prefix}', prefix) + '```')
                 .addField('Example:', '```' + command.example.replace('{prefix}', prefix) + '```')
