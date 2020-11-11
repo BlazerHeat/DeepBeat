@@ -6,13 +6,9 @@ const permissions = require('../utils/permissions.js');
 
 async function getPrefix(guild){
     if(!guild) return defaultPrefix;
-    else return new Promise((resolve, reject) => {
-            Guilds.findOne({ id: guild.id }, (err, res) => {
-                if(err) return reject(err);
-                else if (res) return resolve(res.prefix || defaultPrefix);
-                else return resolve(defaultPrefix);
-        });
-    });
+    
+    const { prefix } = await Guilds.findOne({ id: guild.id });
+    return prefix;
 }
 
 function missingPermissions(array){
