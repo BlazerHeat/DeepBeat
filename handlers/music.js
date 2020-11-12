@@ -24,9 +24,7 @@ module.exports = {
         if(!song){
             if(!Playlist.get(message.guild.id) || Playlist.get(message.guild.id).length == 0){
                 song = guild.playlist[0];
-                guild.playlist.forEach(x => {
-                    require('./music').add(message.guild.id, x);
-                });
+                await reloadPlaylist(message.guild.id);
             } else {
                 song = Playlist.get(message.guild.id)[0];
             }
