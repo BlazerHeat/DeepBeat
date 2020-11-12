@@ -101,6 +101,7 @@ class SearchCommand extends Command {
             voiceChannel.join()
             .then(connection => {
                 if (!clientVoiceChannel || clientVoiceChannel.id !== voiceChannel.id) message.channel.send(embeds.successEmbed('**Joined** <:speaker:714510570665279640>`' + voiceChannel.name + '`'));
+                connection.voice.setSelfDeaf(true);
                 return music.play(connection, message, song);
             });
         }
