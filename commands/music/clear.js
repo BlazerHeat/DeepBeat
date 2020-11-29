@@ -20,7 +20,7 @@ class ClearCommand extends Command {
         let guild = await Guilds.findOne({ id: message.guild.id });
         if(!guild || !guild.playlist || !guild.playlist[0]) return message.channel.send(embeds.errorEmbed(':x: Guild\'s Queue is already empty.'));
 
-        if(message.guild.voice.connection && message.guild.voice.connection.dispatcher) {
+        if(message.guild.voice && message.guild.voice.connection && message.guild.voice.connection.dispatcher) {
             message.guild.voice.connection.dispatcher.destroy();
             message.guild.voice.connection.channel.leave();
         }

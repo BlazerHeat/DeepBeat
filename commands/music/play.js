@@ -71,6 +71,7 @@ class PlayCommand extends Command {
                 } else {
                     let songNumber = await music.getSongNumber(message.guild.id, song);
                     await music.goto(message.guild.id, songNumber);
+                    message.channel.send(embeds.infoEmbed(':ballot_box_with_check: Song already exists in Guild\'s PlayList, so i skipped to it for you.'));
                 }
             }
         }

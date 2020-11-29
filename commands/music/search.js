@@ -20,9 +20,7 @@ class SearchCommand extends Command {
     }
 
     async run(client, message, args, prefix) {
-        if (!message.member.voice || !message.member.voice.channel) return message.channel.send(embeds.errorEmbed(':x: You have to be in a voice channel to use this command.'));
         if (!args[0]) return message.channel.send(embeds.errorEmbed(`:x: Please provide a search query, \`${prefix}search [Youtube Link or Query]\``));
-        let voiceChannel = message.member.voice.channel;
 
         let query = args.join(' ');
 
@@ -61,8 +59,7 @@ class SearchCommand extends Command {
             return await msg.edit(embed);
         }
         
-        voiceChannel = reply.first().member.voice.channel;
-        if (!voiceChannel) return message.channel.send(embeds.errorEmbed(':x: Not connected to any voice channel.'));
+        
         let songNumber = parseInt(reply.first().content);
         let result = results[songNumber - 1];
 
@@ -88,6 +85,7 @@ class SearchCommand extends Command {
             else {
                 let songNumber = await music.getSongNumber(message.guild.id, song);
                 await music.goto(message.guild.id, songNumber);
+                message.channel.send(embeds.infoEmbed(':ballot_box_with_check: Song already exists in Guild\'s PlayList, so i skipped to it for you.'));
             }
         } else {
             await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: [song] }, { upsert: true });
@@ -95,7 +93,8 @@ class SearchCommand extends Command {
             music.resetAndAdd(message.guild.id, song);
         }
         
-
+        let voiceChannel = reply.first().member.voice.channel;
+        if(!voiceChannel) return;
         if(!message.guild.voice || !message.guild.voice.connection || !message.guild.voice.connection.dispatcher) {
             let clientVoiceChannel = message.guild.me.voice.channel;
             voiceChannel.join()
