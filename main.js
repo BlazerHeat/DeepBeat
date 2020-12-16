@@ -1,9 +1,9 @@
+require('dotenv').config();
 const Client = require('./client.js');
-const { token, owner, clientPresence } = require('./config.json');
-const client = new Client(token, owner);
+const client = new Client(process.env.TOKEN, process.env.OWNER);
 
 client.on('ready', () => {
-    client.user.setPresence(clientPresence);
+    client.user.setPresence({ activity: { name: "myself coded", type: "WATCHING"}, status: "dnd" });
     client.loadCommands();
     client.autoLeaveVoice();
     console.log(`Logged in as ${client.user.tag}`);

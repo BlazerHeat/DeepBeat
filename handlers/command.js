@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { defaultPrefix } = require('../config.json');
+const defaultPrefix = process.env.PREFIX;
 const Guilds = require('../database/models/guild.js');
 const embeds = require('../utils/embeds.js');
 const permissions = require('../utils/permissions.js');

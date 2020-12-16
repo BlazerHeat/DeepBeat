@@ -1,10 +1,9 @@
 const mongoose = require('../mongodb');
-const { defaultPrefix, defaultVolume } = require('../../config.json');
 
 const Guild = new mongoose.Schema({
     id: String,
-    prefix: { type: String, default: defaultPrefix },
-    volume: { type: Number, default: defaultVolume },
+    prefix: { type: String, default: process.env.PREFIX },
+    volume: { type: Number, default: Number(process.env.DEFAULT_VOLUME) },
     playlist: { type: Array, default: [] },
     loopqueue: { type: Boolean, default: true },
     loopsong: { type: Boolean, default: false }

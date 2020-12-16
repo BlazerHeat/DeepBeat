@@ -1,8 +1,7 @@
 const Youtube = require('youtube-node');
 const youtube = new Youtube();
-const { youtubeToken } = require('../config.json');
 
-youtube.setKey(youtubeToken);
+youtube.setKey(process.env.YOUTUBE_TOKEN);
 
 module.exports = {
     search: (query, maxResults = 10) => {

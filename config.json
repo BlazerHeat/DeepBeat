@@ -1,9 +1,0 @@
-{
-    "token": "Bot Token",
-    "owner": "Your Discord ID",
-    "databaseURI": "MongoDB Connection URL",
-    "defaultPrefix": "-",
-    "defaultVolume": 0.7,
-    "youtubeToken": "Youtube v3 API token",
-    "clientPresence": { "activity": { "name": "myself coded", "type": "WATCHING"}, "status": "dnd" }
-}

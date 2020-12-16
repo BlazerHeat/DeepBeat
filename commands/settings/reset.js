@@ -2,7 +2,6 @@ const Command = require('../../modules/command');
 const Guilds = require('../../database/models/guild.js');
 const embeds = require('../../utils/embeds.js');
 const { MessageEmbed } = require('discord.js');
-const { defaultPrefix, defaultVolume } = require('../../config.json');
 
 class ResetCommand extends Command {
     constructor(client){
@@ -31,8 +30,8 @@ class ResetCommand extends Command {
             }
         if(reply.first().content.toLowerCase() === 'yes'){
             await Guilds.findOneAndUpdate({ id: message.guild.id }, {
-                prefix: defaultPrefix,
-                volume: defaultVolume,
+                prefix: process.env.PREFIX,
+                volume: Number(process.env.DEFAULT_VOLUME),
                 loopqueue: true,
                 loopsong: false
             });

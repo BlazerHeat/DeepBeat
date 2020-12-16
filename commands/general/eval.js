@@ -1,7 +1,7 @@
 const Command = require('../../modules/command');
 const embeds = require('../../utils/embeds.js');
 const { MessageEmbed } = require('discord.js');
-const { token } = require('../../config.json');
+const token = process.env.TOKEN;
 const util = require('util');
 
 function clean(text){
