@@ -35,7 +35,7 @@ class ResetCommand extends Command {
                 loopqueue: true,
                 loopsong: false
             });
-            if(message.guild.voice && message.guild.voice.connection && message.guild.voice.connection.dispatcher) await message.guild.voice.connection.dispatcher.setVolume(defaultVolume);
+            if(message.guild.voice && message.guild.voice.connection && message.guild.voice.connection.dispatcher) await message.guild.voice.connection.dispatcher.setVolume(Number(process.env.DEFAULT_VOLUME));
             return message.channel.send(embeds.successEmbed(':white_check_mark: All settings has been reset to their defaults.'));
         } else {
             return message.channel.send(embeds.successEmbed(':thumbsup: Reset aborted'));
