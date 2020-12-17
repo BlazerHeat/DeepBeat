@@ -98,5 +98,8 @@ module.exports = {
             const _song = guild.playlist[i];
             if(song.url == _song.url) return (i+1);
         }
+    },
+    forceSkip: (id) => {
+        return Playlist.set(id, Playlist.get(id).slice(1));
     }
 }
