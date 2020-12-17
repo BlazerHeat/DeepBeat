@@ -43,7 +43,7 @@ module.exports = {
             const { loopsong, loopqueue } = await Guilds.findOne({ id: message.guild.id });
 
             if(loopsong){
-                return require('./music').play(connection, message, song);
+                return require('./music').play(connection, message);
             } else if (loopqueue){
                 Playlist.get(message.guild.id).shift();
                 if(Playlist.get(message.guild.id).length == 0) await reloadPlaylist(message.guild.id);
@@ -100,6 +100,6 @@ module.exports = {
         }
     },
     forceSkip: (id) => {
-        return Playlist.set(id, Playlist.get(id).slice(1));
+        return Playlist.get(id).shift();
     }
 }
