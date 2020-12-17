@@ -8,7 +8,7 @@ async function getPrefix(guild){
     if(!guild) return defaultPrefix;
     
     const guildInfo = await Guilds.findOne({ id: guild.id });
-    if(guild) {
+    if(guildInfo) {
         const { prefix } = guildInfo;
         return prefix;
     }
