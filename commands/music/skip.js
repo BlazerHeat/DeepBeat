@@ -15,7 +15,7 @@ class SkipCommand extends Command {
         });
     }
 
-    run(client, message, args, prefix){
+    async run(client, message, args, prefix){
         if(!message.guild.voice || !message.guild.voice.connection || !message.guild.voice.connection.dispatcher) return message.channel.send(embeds.errorEmbed(':x: No Song is playing...'));
         const { loopsong } = await Guilds.findOne({ id: message.guild.id });
         if(loopsong) {
