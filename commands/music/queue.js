@@ -20,10 +20,10 @@ class QueueCommand extends Command {
 
     async run(client, message, args, prefix) {
         let guild = await Guilds.findOne({ id: message.guild.id });
-        if (!guild || !guild.playlist || guild.playlist.length == 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
+        if (!guild || !guild.playlist || guild.playlist.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
 
         let queue = music.playList(message.guild.id);
-        if (!queue || queue.length == 0) queue = guild.playlist;
+        if (!queue || queue.length === 0) queue = guild.playlist;
         let songs = guild.playlist;
 
         let queuelength = 0;

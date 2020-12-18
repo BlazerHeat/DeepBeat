@@ -19,7 +19,7 @@ function missingPermissions(array){
     let text = '';
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        if(i == array.length-1) text += `\`${permissions[element]}\``;
+        if(i === array.length-1) text += `\`${permissions[element]}\``;
         else text += `\`${permissions[element]}\`,`;
     }
     return text;
@@ -82,9 +82,9 @@ module.exports = (client) => {
 
                 let botMissingPermissions = botPermissions.missing(neededClientPermissons);
 
-                if(botMissingPermissions.some(x => x == "EMBED_LINKS")) return message.channel.send('I need Embed Links permission to work.');
+                if(botMissingPermissions.some(x => x === "EMBED_LINKS")) return message.channel.send('I need Embed Links permission to work.');
 
-                if (botMissingPermissions.length != 0) {
+                if (botMissingPermissions.length !== 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **I** need the Following Permissions:\n\`${missingPermissions(botMissingPermissions)}\``));
                 }
 
@@ -92,7 +92,7 @@ module.exports = (client) => {
                 let userPermissions = message.member.permissions;
 
                 let userMissingPermissions = userPermissions.missing(neededUserPermissons);
-                if (message.author.id != client.owner && userMissingPermissions.length != 0) {
+                if (message.author.id !== client.owner && userMissingPermissions.length !== 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **YOU** need the Following Permissions:\n\`${missingPermissions(userMissingPermissions)}\``));
                 }
             }
@@ -101,22 +101,18 @@ module.exports = (client) => {
             } catch (err) {
                 message.channel.send(embeds.errorEmbed(':x: Error occured while executing the command: '+err.toString()))
             }
-            return;
         } else {
             return message.channel.send(embeds.errorEmbed(':x: Command not found!'));
-        };
+        }
 
     });
 
     client.on('message', async (message) => {
-        if(message.content.toLowerCase() == '<@!761475247680520193> prefix' || message.content.toLowerCase() == '<@761475247680520193> prefix'){
-            if(message.channel.type == "dm") return message.channel.send(embeds.loveEmbed(`Prefix for DM channel is \`${defaultPrefix}\``));
+        if(message.content.toLowerCase() === '<@!761475247680520193> prefix' || message.content.toLowerCase() === '<@761475247680520193> prefix'){
+            if(message.channel.type === "dm") return message.channel.send(embeds.loveEmbed(`Prefix for DM channel is \`${defaultPrefix}\``));
             const prefix = await getPrefix(message.guild);
             return message.channel.send(embeds.loveEmbed(`Prefix for this server is \`${prefix}\``));
         }
-        return;
     });
-
-    return;
 };
 

@@ -18,7 +18,7 @@ class RemoveCommand extends Command {
 
     async run(client, message, args, prefix){
         let guild = await Guilds.findOne({ id: message.guild.id });
-        if(!guild || !guild.playlist || guild.playlist.length == 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
+        if(!guild || !guild.playlist || guild.playlist.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
         if(!args[0]) return message.channel.send(embeds.errorEmbed('Invaild Usage, please try `'+prefix+'remove [song number]`'));
         
         let { playlist } = guild;
@@ -38,7 +38,6 @@ class RemoveCommand extends Command {
         await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: newPlaylist });
         message.channel.send(embeds.successEmbed(':white_check_mark: Removed: `'+removedSong[0].title+'`'));
         if (newPlaylist.length <= 0) message.channel.send(embeds.warningEmbed(':warning: Guild\'s playlist got empty.'));
-        return;
     }
 }
 

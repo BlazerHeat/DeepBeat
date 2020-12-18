@@ -26,7 +26,7 @@ class SearchCommand extends Command {
 
         message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:714502501046681733>'));
         let data = await youtube.search(query);
-        if (!data || !data.items || data.items.length == 0) return message.channel.send(embeds.errorEmbed(':x: No results found.'));
+        if (!data || !data.items || data.items.length === 0) return message.channel.send(embeds.errorEmbed(':x: No results found.'));
         else message.channel.send(embeds.infoEmbed(`:ballot_box_with_check: **Songs Found**`));
 
         let results = data.items;
@@ -74,7 +74,7 @@ class SearchCommand extends Command {
 
         let guild = await Guilds.findOne({ id: message.guild.id });
         if (guild && guild.playlist && guild.playlist[0]) {
-            let hasSong = guild.playlist.find(x => x.url == song.url);
+            let hasSong = guild.playlist.find(x => x.url === song.url);
             if (!hasSong) {
                 //add Song to database
                 guild.playlist.push(song);

@@ -18,7 +18,7 @@ class GotoCommand extends Command {
 
     async run(client, message, args, prefix){
         let guild = await Guilds.findOne({ id: message.guild.id });
-        if(!guild || !guild.playlist || guild.playlist.length == 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
+        if(!guild || !guild.playlist || guild.playlist.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
         if(!args[0]) return message.channel.send(embeds.errorEmbed(`:x: Please provide a song number from \`${prefix}queue\``));
         
         let songs = guild.playlist;

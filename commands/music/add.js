@@ -26,10 +26,10 @@ class AddCommand extends Command {
         message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:714502501046681733>'));
 
         let results = await youtube.search(query, 1);
-        if (!results || !results.items || results.items.length == 0) return message.channel.send(embeds.errorEmbed(`:x: Song not found on <:youtube:714502501046681733>`));
+        if (!results || !results.items || results.items.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Song not found on <:youtube:714502501046681733>`));
 
         let guild = await Guilds.findOne({ id: message.guild.id });
-        if(guild && guild.playlist && guild.playlist[0] && guild.playlist.some(x => x.url == `https://www.youtube.com/watch?v=${results.items[0].id.videoId}`)){
+        if(guild && guild.playlist && guild.playlist[0] && guild.playlist.some(x => x.url === `https://www.youtube.com/watch?v=${results.items[0].id.videoId}`)){
             return message.channel.send(embeds.errorEmbed(':x: Song already exists in Guild\'s playlist, please check with `'+prefix+'queue`'));
         }
 

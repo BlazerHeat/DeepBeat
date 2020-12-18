@@ -12,7 +12,7 @@ module.exports = (duration) => {
 
         let seconds = totalSeconds;
 
-        if (days == 0 && hours == 0) return `${minutes}m : ${seconds.toFixed(0)}s`;
-        else if (days == 0 && hours != 0) return `${hours}h : ${minutes}m : ${seconds.toFixed(0)}s`;
+        if (days === 0 && hours === 0) return `${minutes}m : ${seconds.toFixed(0)}s`;
+        else if (days === 0 && hours !== 0) return `${hours}h : ${minutes}m : ${seconds.toFixed(0)}s`;
         else return `${days}d : ${hours}h : ${minutes}m : ${seconds.toFixed(0)}s`;
 }

@@ -11,7 +11,6 @@ async function reloadPlaylist(id) {
     playlist.forEach(song => {
         Playlist.get(id).push(song);
     });
-    return;
 }
 
 
@@ -22,7 +21,7 @@ module.exports = {
 
         const guild = await Guilds.findOne({ id: message.guild.id });
         if(!song){
-            if(!Playlist.get(message.guild.id) || Playlist.get(message.guild.id).length == 0){
+            if(!Playlist.get(message.guild.id) || Playlist.get(message.guild.id).length === 0){
                 song = guild.playlist[0];
                 await reloadPlaylist(message.guild.id);
             } else {
@@ -34,7 +33,7 @@ module.exports = {
         const dispatcher = connection.play(ytdl(song.url, { quality: `highestaudio`, filter: () => ['251'], highWaterMark: 1 << 25 }), { volume: guild.volume, seek: seekAmount });
 
         dispatcher.on('start', () => {
-            if(seekAmount == 0) return message.channel.send(embeds.infoEmbed('**:notes: Playing:** `' + song.title + '`'));
+            if(seekAmount === 0) return message.channel.send(embeds.infoEmbed('**:notes: Playing:** `' + song.title + '`'));
         });
 
         dispatcher.on('finish', async () => {
@@ -46,7 +45,7 @@ module.exports = {
                 return require('./music').play(connection, message);
             } else if (loopqueue){
                 Playlist.get(message.guild.id).shift();
-                if(Playlist.get(message.guild.id).length == 0) await reloadPlaylist(message.guild.id);
+                if(Playlist.get(message.guild.id).length === 0) await reloadPlaylist(message.guild.id);
                 return require('./music').play(connection, message);
             } else {
                 Playlist.get(message.guild.id).shift();
@@ -71,7 +70,7 @@ module.exports = {
     remove: (id, song) => {
         if(!Playlist.get(id)) return;
         for(let i = 0; i < Playlist.get(id).length; i++){
-            if(Playlist.get(id)[i].url == song.url){
+            if(Playlist.get(id)[i].url === song.url){
                 Playlist.get(id).splice(i, 1);
                 break;
             }
@@ -90,13 +89,12 @@ module.exports = {
     resetAndAdd: (id, song) => {
         require('./music').refreshPlaylist(id);
         require('./music').add(id, song);
-        return;
     },
     getSongNumber: async (id, song) => {
         let guild = await Guilds.findOne({ id: id });
         for (let i = 0; i < guild.playlist.length; i++) {
             const _song = guild.playlist[i];
-            if(song.url == _song.url) return (i+1);
+            if(song.url === _song.url) return (i+1);
         }
     },
     forceSkip: (id) => {
