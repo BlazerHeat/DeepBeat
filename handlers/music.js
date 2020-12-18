@@ -7,8 +7,8 @@ let Seek = new Map();
 
 async function reloadPlaylist(id) {
     if(!Playlist.get(id)) Playlist.set(id, []);
-    let data = await Guilds.findOne({ id: id });
-    data.playlist.forEach(song => {
+    const { playlist } = await Guilds.findOne({ id: id });
+    playlist.forEach(song => {
         Playlist.get(id).push(song);
     });
     return;
