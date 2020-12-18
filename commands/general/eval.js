@@ -44,13 +44,13 @@ class EvalCommand extends Command {
 
     run(client, message, args, prefix) {
         if(!args[0]) return message.channel.send(embeds.errorEmbed(`Please specify what i have to Evaluate.\nUsage: ${prefix}eval [code]`));
-        const code = args.join(" ");
+        const code = args.join(" ").replace('```js', '').replace('```', '').replace('```', '');
         try {
             let evaled = eval(code);
 
             let embed = new MessageEmbed()
                 .setAuthor(`[!] Evaluated [!]`, client.user.displayAvatarURL())
-                .addField('INPUT: :inbox_tray:', '```js\n'+length(args.join(' '))+'```')
+                .addField('INPUT: :inbox_tray:', '```js\n'+length(code)+'```')
                 .addField('OUTPUT: :outbox_tray:', '```js\n'+length(clean(evaled))+'```')
                 .addField('TYPE: :bulb:', '```cs\n\''+typeof(evaled)+'\'```')
                 .setColor(0x00FF0F);
@@ -58,7 +58,7 @@ class EvalCommand extends Command {
         } catch (err) {
             let embed = new MessageEmbed()
                 .setAuthor(`[!] ERROR [!]`, client.user.displayAvatarURL())
-                .addField('INPUT: :inbox_tray:', '```js\n'+length(args.join(' '))+'```')
+                .addField('INPUT: :inbox_tray:', '```js\n'+length(code)+'```')
                 .addField('OUTPUT: :outbox_tray:', '```js\n'+length(clean2(err))+'```')
                 .addField('TYPE: :bulb:', '```cs\n\''+typeof(evaled)+'\'```')
                 .setColor(0xFF0000);
