@@ -88,7 +88,7 @@ class SearchCommand extends Command {
                 message.channel.send(embeds.infoEmbed(':ballot_box_with_check: Song already exists in Guild\'s PlayList, so i skipped to it for you.'));
             }
         } else {
-            await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: [song] }, { upsert: true });
+            await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: [song] }, { upsert: true, setDefaultsOnInsert: true });
             message.channel.send(embeds.infoEmbed('<:upload:714717689528188928> Added Song to Guild\'s PlayList'));
             music.resetAndAdd(message.guild.id, song);
         }

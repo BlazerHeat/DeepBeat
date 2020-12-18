@@ -48,7 +48,7 @@ class AddCommand extends Command {
         if (guild && guild.playlist && guild.playlist[0]) newPlaylist = guild.playlist;
         newPlaylist.push(song);
 
-        await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: newPlaylist }, { upsert: true });
+        await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: newPlaylist }, { upsert: true, setDefaultsOnInsert: true });
         music.add(message.guild.id, song);
         return message.channel.send(embeds.infoEmbed(`<:upload:714717689528188928> Added \`${song.title}\` to Guild's playlist`));
     }
