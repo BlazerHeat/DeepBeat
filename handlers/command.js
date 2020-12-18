@@ -108,6 +108,15 @@ module.exports = (client) => {
 
     });
 
+    client.on('message', async (message) => {
+        if(message.channel.type == "dm") return message.channel.send(embeds.loveEmbed(`Prefix for DM channel is \`${defaultPrefix}\``));
+        if(message.content.toLowerCase() == '<@!761475247680520193> prefix' || message.content.toLowerCase() == '<@761475247680520193> prefix'){
+            const prefix = await getPrefix(message.guild);
+            return message.channel.send(embeds.loveEmbed(`Prefix for this server is \`${prefix}\``));
+        }
+        return;
+    });
+
     return;
 };
 
