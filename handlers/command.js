@@ -34,6 +34,7 @@ module.exports = (client) => {
             if(folder.endsWith('.js')){
                 const CommandClass = require(`../commands/${folder}`);
                 const command = new CommandClass(client);
+                command['category'] = folder;
                 client.commands.set(command.name, command);
                 if(command.aliases && command.aliases.length !== 0){
                     command.aliases.forEach(alia => {
@@ -48,6 +49,7 @@ module.exports = (client) => {
                     files.forEach(file => {
                         const CommandClass = require(`../commands/${folder}/${file}`);
                         const command = new CommandClass(client);
+                        command['category'] = folder;
                         client.commands.set(command.name, command);
                         if(command.aliases && command.aliases.length !== 0){
                             command.aliases.forEach(alia => {
