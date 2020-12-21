@@ -31,10 +31,7 @@ class RemoveCommand extends Command {
         let queue = music.playList(message.guild.id);
         if(queue && message.guild.voice && message.guild.voice.connection && message.guild.voice.connection.dispatcher && removedSong[0].url === queue[0].url) {
             if(queue.length <= 1 && newPlaylist.length <= 0) message.guild.voice.connection.channel.leave();
-            else {
-                if(loopsong) music.forceSkip(message.guild.id);
-                await message.guild.voice.connection.dispatcher.end();
-            }
+            else await message.guild.voice.connection.dispatcher.end();
         }
         else music.remove(message.guild.id, removedSong[0]);
 
