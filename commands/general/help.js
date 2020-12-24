@@ -1,6 +1,7 @@
 const Command = require('../../modules/command');
 const embeds = require('../../utils/embeds.js');
 const { MessageEmbed } = require('discord.js');
+const { version } = require('../../package.json');
 
 class HelpCommand extends Command {
     constructor(client) {
@@ -36,7 +37,7 @@ class HelpCommand extends Command {
                 .addField('Example:', '```' + command.example.replace('{prefix}', prefix) + '```')
                 .addField('Aliases:', command.aliases[0] ? `\`${command.aliases.join(', ')}\`` : '`None`');
         }
-        help.setColor('#FF087F');
+        help.setFooter(`version: ${version}`, client.user.displayAvatarURL()).setColor('#FF087F');
         return message.channel.send(help);
     }
 }
