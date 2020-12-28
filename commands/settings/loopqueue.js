@@ -20,7 +20,7 @@ class LoopQueueCommand extends Command {
         let guild = await Guilds.findOne({ id: message.guild.id });
 
         if(!guild || guild.loopqueue){
-            await Guilds.findOneAndUpdate({ id: message.guild.id }, { loopqueue: false });
+            await Guilds.findOneAndUpdate({ id: message.guild.id }, { loopqueue: false }, { upsert: true });
             return message.channel.send(embeds.infoEmbed(':repeat: **Disabled!**'));
         } else {
             await Guilds.findOneAndUpdate({ id: message.guild.id }, { loopqueue: true }, { upsert: true });

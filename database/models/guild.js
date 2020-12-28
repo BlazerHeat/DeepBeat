@@ -6,7 +6,8 @@ const Guild = new mongoose.Schema({
     volume: { type: Number, default: Number(process.env.DEFAULT_VOLUME) },
     playlist: { type: Array, default: [] },
     loopqueue: { type: Boolean, default: true },
-    loopsong: { type: Boolean, default: false }
+    loopsong: { type: Boolean, default: false },
+    announcesong: { type: Boolean, default: true }
 });
 
 const Guilds = mongoose.model('Guilds', Guild);

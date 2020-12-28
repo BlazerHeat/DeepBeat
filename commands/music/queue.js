@@ -63,7 +63,7 @@ class QueueCommand extends Command {
             queueEmbed.setDescription(`
             **Song will be played:**
             [${queue[0].title}](${queue[0].url}) | \`${msToTime(parseInt(queue[0].time)*1000)}\`\n
-            **loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'}**
+            **loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'} : announce ${guild.announcesong ? '✓' : '✗'}**
                 ${queueList}
             `)
                 .setThumbnail('https://imgur.com/WgscvU0.gif');
