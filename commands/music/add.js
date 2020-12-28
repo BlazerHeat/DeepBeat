@@ -14,7 +14,7 @@ class AddCommand extends Command {
             example: '{prefix}add Thunder Song',
             aliases: ['a'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

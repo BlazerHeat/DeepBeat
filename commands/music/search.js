@@ -15,7 +15,7 @@ class SearchCommand extends Command {
             example: '{prefix}search Thunder Song',
             aliases: ['find'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

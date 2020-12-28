@@ -11,7 +11,7 @@ class SkipCommand extends Command {
             example: '{prefix}skip',
             aliases: ['s', 'next'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

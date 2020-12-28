@@ -12,7 +12,7 @@ class RemoveCommand extends Command {
             example: '{prefix}remove 3',
             aliases: ['rm', 'rem'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

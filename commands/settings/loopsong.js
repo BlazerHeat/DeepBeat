@@ -11,7 +11,7 @@ class LoopSongCommand extends Command {
             example: '{prefix}loopsong',
             aliases: ['ls'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS'],
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
             userPermissions: ['MANAGE_GUILD']
         });
     }

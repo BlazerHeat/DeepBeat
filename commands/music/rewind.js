@@ -12,7 +12,7 @@ class RewindCommand extends Command {
             example: '{prefix}rewind 5',
             aliases: ['r'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

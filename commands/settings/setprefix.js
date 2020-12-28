@@ -10,7 +10,7 @@ class SetPrefixCommand extends Command {
             usage: '{prefix}setprefix [New Prefix (The prefix cannot be more than 5 characters)]',
             example: '{prefix}setprefix ?',
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS'],
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
             userPermissions: ['MANAGE_GUILD']
         });
     }

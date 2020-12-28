@@ -12,7 +12,7 @@ class ResetCommand extends Command {
             example: '{prefix}reset',
             aliases: [],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS'],
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
             userPermissions: ['MANAGE_GUILD']
         });
     }

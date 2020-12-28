@@ -11,7 +11,7 @@ class VolumeCommand extends Command {
             example: '{prefix}volume 50',
             aliases: ['vol'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

@@ -13,7 +13,7 @@ class NowPlayingCommand extends Command {
             example: '{prefix}nowplaying',
             aliases: ['np'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

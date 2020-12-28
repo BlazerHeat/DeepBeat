@@ -15,7 +15,7 @@ class PlayCommand extends Command {
             example: '{prefix}play Thunder Song',
             aliases: ['p'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

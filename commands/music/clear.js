@@ -12,7 +12,7 @@ class ClearCommand extends Command {
             example: '{prefix}clear',
             aliases: ['cl'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

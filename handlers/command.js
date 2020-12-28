@@ -19,12 +19,11 @@ function missingPermissions(array){
     let text = '';
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        if(i === array.length-1) text += `\`${permissions[element]}\``;
-        else text += `\`${permissions[element]}\`,`;
+        if(i === array.length-1) text += permissions[element];
+        else text += `${permissions[element]}, `;
     }
     return text;
 }
-
 
 module.exports = (client) => {
 
@@ -80,20 +79,18 @@ module.exports = (client) => {
             if(command.guildOnly && !message.guild) return message.channel.send(embeds.errorEmbed(':x: Guild only command'));
             if(message.channel.type !== 'dm'){
                 let neededClientPermissons = command.clientPermissions;
-                let botPermissions = message.guild.me.permissions;
-
-                let botMissingPermissions = botPermissions.missing(neededClientPermissons);
-
-                if(botMissingPermissions.some(x => x === "EMBED_LINKS")) return message.channel.send('I need Embed Links permission to work.');
+                let botPermissions = message.channel.permissionsFor(message.guild.me).toArray();
+                let botMissingPermissions = neededClientPermissons.filter(x => !botPermissions.includes(x));
+                if(botMissingPermissions.some(x => x === 'EMBED_LINKS')) return message.channel.send('I don\'t have `Embed Links` permission, I need it to send Embed messages.');
 
                 if (botMissingPermissions.length !== 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **I** need the Following Permissions:\n\`${missingPermissions(botMissingPermissions)}\``));
                 }
 
                 let neededUserPermissons = command.userPermissions;
-                let userPermissions = message.member.permissions;
+                let userPermissions = message.member.permissions.toArray();
 
-                let userMissingPermissions = userPermissions.missing(neededUserPermissons);
+                let userMissingPermissions = neededUserPermissons.filter(x => userPermissions.includes(x));
                 if (message.author.id !== client.owner && userMissingPermissions.length !== 0) {
                     return message.channel.send(embeds.errorEmbed(`:x: Before Using \`${command.name}\` Command, **YOU** need the Following Permissions:\n\`${missingPermissions(userMissingPermissions)}\``));
                 }
@@ -101,12 +98,11 @@ module.exports = (client) => {
             try {
                 command.run(client, message, args, prefix);
             } catch (err) {
-                message.channel.send(embeds.errorEmbed(':x: Error occured while executing the command: '+err.toString()))
+                message.channel.send(embeds.errorEmbed(':x: Error occured while executing the command: '+err.toString()));
             }
         } else {
             return message.channel.send(embeds.errorEmbed(':x: Command not found!'));
         }
-
     });
 
     client.on('message', async (message) => {

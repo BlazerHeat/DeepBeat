@@ -38,7 +38,7 @@ class EvalCommand extends Command {
             usage: '{prefix}eval [code block]',
             example: '{prefix}eval 2+2 //output: 4',
             ownerOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

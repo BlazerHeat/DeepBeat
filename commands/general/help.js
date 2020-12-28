@@ -10,7 +10,7 @@ class HelpCommand extends Command {
             desc: 'Sends you list of commands.',
             usage: '{prefix}help [command name]',
             example: '{prefix}help play',
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

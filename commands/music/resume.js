@@ -10,7 +10,7 @@ class ResumeCommand extends Command {
             example: '{prefix}resume',
             aliases: ['start', 're', 'res', 'continue'],
             guildOnly: true,
-            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

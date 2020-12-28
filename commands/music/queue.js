@@ -14,7 +14,7 @@ class QueueCommand extends Command {
             example: '{prefix}queue',
             aliases: ['q', 'playlist'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         })
     }
 

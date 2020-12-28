@@ -9,7 +9,7 @@ class InviteCommand extends Command {
             usage: '{prefix}invite',
             example: '{prefix}invite',
             aliases: ['links', 'link'],
-            clientPermissions: ['USE_EXTERNAL_EMOJIS'],
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
         });
     }
 

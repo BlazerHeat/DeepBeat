@@ -10,7 +10,7 @@ class LeaveCommand extends Command {
             example: '{prefix}leave',
             aliases: ['l'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS']
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }
 

@@ -11,7 +11,7 @@ class LoopQueueCommand extends Command {
             example: '{prefix}loopqueue',
             aliases: ['lq'],
             guildOnly: true,
-            clientPermissions: ['USE_EXTERNAL_EMOJIS'],
+            clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
             userPermissions: ['MANAGE_GUILD']
         });
     }
