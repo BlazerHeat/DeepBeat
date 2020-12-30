@@ -33,7 +33,7 @@ module.exports = {
         const dispatcher = connection.play(ytdl(song.url, { quality: `highestaudio`, filter: () => ['251'], highWaterMark: 1 << 25 }), { volume: guild.volume, seek: seekAmount });
 
         dispatcher.on('start', () => {
-            if(seekAmount === 0 && guild.announcesong) return message.channel.send(embeds.infoEmbed('**:notes: Playing:** `' + song.title + '`'));
+            if(seekAmount === 0 && guild.announcesong && message.channel) return message.channel.send(embeds.infoEmbed('**:notes: Playing:** `' + song.title + '`'));
         });
 
         dispatcher.on('finish', async () => {
@@ -50,7 +50,7 @@ module.exports = {
             } else {
                 Playlist.get(message.guild.id).shift();
                 connection.channel.leave();
-                return message.channel.send(embeds.infoEmbed(':musical_note: Song completed!'));
+                if(message.channel) return message.channel.send(embeds.infoEmbed(':musical_note: Song completed!'));
             }
 
         });
