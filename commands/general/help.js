@@ -19,7 +19,7 @@ class HelpCommand extends Command {
         if (!args[0]) {
             help.setTitle(`${client.user.username} Help`)
                 .setDescription('`' + prefix + 'help <command>` to see more information about that command.')
-                .addField(":green_book: GENERAL", `\`help, invite, ping\``)
+                .addField(":green_book: GENERAL", `\`help, invite, ping, stats\``)
                 .addField(":musical_note: MUSIC", '`add, clear, goto, leave, nowplaying, pause, play, queue, remove, replay, resume, search, skip, rewind, volume, forward`')
                 .addField(":pencil2: SETTINGS", '`loopqueue, loopsong, setprefix, reset`');
         }
