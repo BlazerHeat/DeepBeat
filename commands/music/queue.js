@@ -48,25 +48,16 @@ class QueueCommand extends Command {
                     else queueList += `\`${i}.\` [${song.title.split(' ').splice(0, maxWords).join(' ')}](${song.url}) | \`${msToTime(parseInt(song.time)*1000)}\`\n`;
                 }
             }
-            queueEmbed.setDescription(`
-            **Now Playing:**
-            [${queue[0].title}](${queue[0].url}) | \`${msToTime(parseInt(queue[0].time)*1000)}\`\n
-            **loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'} : announce ${guild.announcesong ? '✓' : '✗'}**
-            ${queueList}
-            `).setThumbnail(queue[0].thumbnail);
+            queueEmbed.setDescription(`**Now Playing:**\n[${queue[0].title}](${queue[0].url}) | \`${msToTime(parseInt(queue[0].time)*1000)}\`\n\n**loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'} : announce ${guild.announcesong ? '✓' : '✗'}**\n${queueList}`)
+            .setThumbnail(queue[0].thumbnail);
         } else {
             let queueList = '';
             for (let i = 1; i <= songs.length; i++) {
                 let song = songs[i - 1];
                 if (song) queueList += `\`${i}.\` [${song.title.split(' ').splice(0, maxWords).join(' ')}](${song.url}) | \`${msToTime(parseInt(song.time)*1000)}\`\n`;
             }
-            queueEmbed.setDescription(`
-            **Song will be played:**
-            [${queue[0].title}](${queue[0].url}) | \`${msToTime(parseInt(queue[0].time)*1000)}\`\n
-            **loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'} : announce ${guild.announcesong ? '✓' : '✗'}**
-                ${queueList}
-            `)
-                .setThumbnail('https://imgur.com/WgscvU0.gif');
+            queueEmbed.setDescription(`**Song will be played:**\n[${queue[0].title}](${queue[0].url}) | \`${msToTime(parseInt(queue[0].time)*1000)}\`\n\n**loop-queue ${guild.loopqueue ? '✓' : '✗'} : loop-song ${guild.loopsong ? '✓' : '✗'} : announce ${guild.announcesong ? '✓' : '✗'}**\n${queueList}`)
+            .setThumbnail('https://imgur.com/WgscvU0.gif');
         }
         queueEmbed.setFooter('Total Queue Time: ' + msToTime(queuelength));
         return message.channel.send(queueEmbed);
