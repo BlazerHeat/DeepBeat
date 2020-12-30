@@ -7,7 +7,6 @@ class LeaveCommand extends Command {
             name: 'leave',
             desc: 'Makes bot leave the voice channel.',
             usage: '{prefix}leave',
-            example: '{prefix}leave',
             aliases: ['l'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

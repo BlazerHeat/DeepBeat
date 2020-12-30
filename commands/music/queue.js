@@ -11,7 +11,6 @@ class QueueCommand extends Command {
             name: 'queue',
             desc: 'Displays Guild\'s playlist.',
             usage: '{prefix}queue',
-            example: '{prefix}queue',
             aliases: ['q', 'playlist'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

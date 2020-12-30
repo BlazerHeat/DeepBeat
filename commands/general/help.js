@@ -33,9 +33,9 @@ class HelpCommand extends Command {
 
             help.setTitle(`Command - ${command.name}`)
                 .setDescription(command.desc.replace('{prefix}', prefix))
-                .addField('Usage:', '```' + command.usage.replace('{prefix}', prefix) + '```')
-                .addField('Example:', '```' + command.example.replace('{prefix}', prefix) + '```')
-                .addField('Aliases:', command.aliases[0] ? `\`${command.aliases.join(', ')}\`` : '`None`');
+                .addField('Usage:', '```' + command.usage.replace('{prefix}', prefix) + '```');
+                if(command.example) help.addField('Example:', '```' + command.example.replace('{prefix}', prefix) + '```');
+                help.addField('Aliases:', command.aliases[0] ? `\`${command.aliases.join(', ')}\`` : '`None`');
         }
         help.setFooter(`version: ${version}`, client.user.displayAvatarURL()).setColor('#FF087F');
         return message.channel.send(help);

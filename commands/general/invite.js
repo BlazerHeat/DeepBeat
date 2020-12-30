@@ -7,7 +7,6 @@ class InviteCommand extends Command {
             name: 'invite',
             desc: 'Gives all bot realted links.',
             usage: '{prefix}invite',
-            example: '{prefix}invite',
             aliases: ['links', 'link'],
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
         });

@@ -9,7 +9,6 @@ class PreviousCommand extends Command {
             name: 'previous',
             desc: 'Play previous song in playlist.',
             usage: '{prefix}previous',
-            example: '{prefix}previous',
             aliases: ['pre', 'unskip', 'last'],
             guildOnly: true,
             clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

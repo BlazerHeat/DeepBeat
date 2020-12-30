@@ -8,7 +8,6 @@ class LoopSongCommand extends Command {
             name: 'loopsong',
             desc: 'Enable or Disable song looping.',
             usage: '{prefix}loopsong',
-            example: '{prefix}loopsong',
             aliases: ['ls'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],

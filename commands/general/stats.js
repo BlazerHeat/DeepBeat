@@ -8,7 +8,6 @@ class InviteCommand extends Command {
             name: 'stats',
             desc: 'Gives all bot\'s system realted information.',
             usage: '{prefix}stats',
-            example: '{prefix}stats',
             aliases: ['info', 'status'],
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
         });

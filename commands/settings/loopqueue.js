@@ -8,7 +8,6 @@ class LoopQueueCommand extends Command {
             name: 'loopqueue',
             desc: 'Enable or Disable playlist looping.',
             usage: '{prefix}loopqueue',
-            example: '{prefix}loopqueue',
             aliases: ['lq'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],

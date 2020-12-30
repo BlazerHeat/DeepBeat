@@ -8,7 +8,6 @@ class SkipCommand extends Command {
             name: 'skip',
             desc: 'Skips currently playing song',
             usage: '{prefix}skip',
-            example: '{prefix}skip',
             aliases: ['s', 'next'],
             guildOnly: true,
             clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

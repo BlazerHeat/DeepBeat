@@ -7,7 +7,6 @@ class ResumeCommand extends Command {
             name: 'resume',
             desc: 'Resumes the paused player.',
             usage: '{prefix}resume',
-            example: '{prefix}resume',
             aliases: ['start', 're', 'res', 'continue'],
             guildOnly: true,
             clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

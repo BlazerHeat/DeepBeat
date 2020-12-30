@@ -8,7 +8,6 @@ class ReplayCommand extends Command {
             name: 'replay',
             desc: 'Replays currently playing song.',
             usage: '{prefix}replay',
-            example: '{prefix}replay',
             aliases: [],
             guildOnly: true,
             clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

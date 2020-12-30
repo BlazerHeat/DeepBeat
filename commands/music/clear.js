@@ -9,7 +9,6 @@ class ClearCommand extends Command {
             name: 'clear',
             desc: 'Clears Guild\'s playlist.',
             usage: '{prefix}clear',
-            example: '{prefix}clear',
             aliases: ['cl'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

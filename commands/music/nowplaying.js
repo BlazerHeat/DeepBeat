@@ -10,7 +10,6 @@ class NowPlayingCommand extends Command {
             name: 'nowplaying',
             desc: 'Display currently playing song.',
             usage: '{prefix}nowplaying',
-            example: '{prefix}nowplaying',
             aliases: ['np'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

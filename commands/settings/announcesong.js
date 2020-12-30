@@ -8,7 +8,6 @@ class SetPrefixCommand extends Command {
             name: 'announcesong',
             desc: 'Enable or Disable songs announcements.',
             usage: '{prefix}announcesong',
-            example: '{prefix}announcesong',
             aliases: ['as'],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],

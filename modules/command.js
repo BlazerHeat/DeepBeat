@@ -1,10 +1,10 @@
 class Command {
     constructor(client, { 
-        name = " ",
-        desc = " ",
+        name = null,
+        desc = null,
         aliases = [],
-        usage = " ",
-        example = " ",
+        usage = null,
+        example = null,
         guildOnly = false,
         ownerOnly = false,
         userPermissions = [],

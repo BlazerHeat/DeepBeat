@@ -9,7 +9,6 @@ class PingCommand extends Command {
             name: 'ping',
             desc: 'Display bot\'s ping.',
             usage: '{prefix}ping',
-            example: '{prefix}ping',
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']
         });
     }

@@ -7,7 +7,6 @@ class PauseCommand extends Command {
             name: 'pause',
             desc: 'Pause the player.',
             usage: '{prefix}pause',
-            example: '{prefix}pause',
             aliases: ['stop'],
             guildOnly: true,
             clientPermissions: ['CONNECT', 'SPEAK', 'USE_EXTERNAL_EMOJIS', 'EMBED_LINKS']

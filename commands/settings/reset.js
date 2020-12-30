@@ -9,7 +9,6 @@ class ResetCommand extends Command {
             name: 'reset',
             desc: 'Used to reset bot\'s settings.',
             usage: '{prefix}reset',
-            example: '{prefix}reset',
             aliases: [],
             guildOnly: true,
             clientPermissions: ['USE_EXTERNAL_EMOJIS', 'EMBED_LINKS'],
