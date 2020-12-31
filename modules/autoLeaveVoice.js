@@ -8,7 +8,7 @@ module.exports = (client) => {
         if (!guild || !guild.voice || !guild.voice.connection) return;
         const { channel, dispatcher } = guild.voice.connection;
 
-        if (channel.members.filter(x => !x.user.bot).size === 0 && !voiceLeaves.has(guild.id)) {
+        if (channel.members.filter(x => !x.user.bot && !x.voice.deaf).size === 0 && !voiceLeaves.has(guild.id)) {
             if (!dispatcher) return;
             dispatcher.pause();
             // Also set the timeout to leave the voiceChannel in the voiceLeaves map we defined before
