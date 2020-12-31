@@ -20,7 +20,7 @@ module.exports = (client) => {
             }, 60000)) // 1minutes
         }
 
-        if (channel.members.filter(x => !x.user.bot).size !== 0 && voiceLeaves.has(guild.id)) {
+        if (channel.members.filter(x => !x.user.bot && !x.voice.deaf).size !== 0 && voiceLeaves.has(guild.id)) {
             clearTimeout(voiceLeaves.get(guild.id));
             voiceLeaves.delete(guild.id);
             if (dispatcher) dispatcher.resume();
