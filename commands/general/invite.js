@@ -18,6 +18,7 @@ class InviteCommand extends Command {
             .setDescription(`
                 [Invite me](https://discord.com/api/oauth2/authorize?client_id=761475247680520193&permissions=3492096&scope=bot)
                 [Support Server](https://discord.gg/gTkmen2)
+                [Github Repo](https://github.com/BlazerHeat/DeepBeat)
                 Discord Bot List - comming soon
                 Website - comming soon
             `)
