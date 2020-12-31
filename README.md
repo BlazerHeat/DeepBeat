@@ -12,7 +12,7 @@
 
 ## 🚀 Getting Started
 
-before starting the bot, make you have configured it correctly
+before starting the bot, make sure you have configured it correctly
 
 ```
 git clone https://github.com/BlazerHeat/DeepBeat.git
