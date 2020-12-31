@@ -1,5 +1,5 @@
 # 🤖 DeepBeat (Discord Music Bot)
-[![image](https://img.shields.io/badge/language-javascript-yellow)](https://www.javascript.com/) [![image](https://img.shields.io/badge/node-%3E%3D%2014.0.0-blue)](https://nodejs.org/)
+[![image](https://img.shields.io/badge/language-javascript-yellow)](https://www.javascript.com/) [![image](https://img.shields.io/badge/node-%3E%3D%2012.0.0-blue)](https://nodejs.org/)
 > DeepBeat is a Discord Music Bot built with discord.js and has all the features you need!
 
 ## Requirements
