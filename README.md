@@ -48,8 +48,8 @@ YOUTUBE_TOKEN= YouTube v3api Token
 > Note: The default prefix for commands is `-`
 
 #### 🎵 Music commands
-| Command                  | Description                                                                                                               | Usage                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Command| Description|Usage|
+|:---:|:---:|:---:|
 | -play| Play song through link, query or playlist| -play [Youtube link or Query]|
 | -add| Add songs to Guild's playlist| -add [Youtube link or Query]|
 | -clear| Clears Guilds playlist| -clear|
@@ -68,16 +68,16 @@ YOUTUBE_TOKEN= YouTube v3api Token
 | -forward| Skip some amount of seconds in music stream| -forward [amount in seconds]|
 
 #### 💡 General commands
-| Command                  | Description                                                                                                               | Usage                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Command| Description|Usage|
+|:---:|:---:|:---:|
 | -help| Sends you list of commands| -help [command name]|
 | -invite| Gives all bot realted links|-invite|
 | -ping| Display bot ping| -ping|
 | -stats| Gives all bot's system realted information| -stats|
 
 #### ✏️ Settings commands
-| Command                  | Description                                                                                                               | Usage                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Command| Description|Usage|
+|:---:|:---:|:---:|
 | -setprefix| Changes the prefix used to address bot| -setprefix [New Prefix]|
 | -reset| Used to reset bot settings|-reset|
 | -loopqueue| Enable or Disable playlist looping| -loopqueue|
