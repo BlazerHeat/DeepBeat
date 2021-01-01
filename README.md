@@ -8,7 +8,7 @@
 2. YouTube Data API v3 Key **[Guide](https://developers.google.com/youtube/v3/getting-started)**
 3. Your Discord ID **[Guide](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)**
 4. Mongo Database URI **[Get Free Here](https://www.mongodb.com/cloud/atlas)**
-5. Node.js v14.0.0 or newer **[Download](https://nodejs.org/en/)**
+5. Node.js v12.0.0 or newer **[Download](https://nodejs.org/en/)**
 
 ## 🚀 Getting Started
 
@@ -33,7 +33,7 @@ Open `.env` and fill out the values:
 TOKEN= Your Discord Bot Token
 OWNER= Your Discord ID
 DATABASE_URI= MongoDB URI
-PREFIX=- (any default commands'  prefix you want)
+PREFIX=- (any default commands' prefix you want)
 DEFAULT_VOLUME=0.7 (default music volume should be between 0 - 1)
 YOUTUBE_TOKEN= YouTube v3api Token
 ```
