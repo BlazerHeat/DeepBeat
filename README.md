@@ -27,7 +27,10 @@ After installation finishes you can use `node main.js` to start the bot.
 
 ## ⚙️ Configuration
 
-Open `.env` and fill out the values:
+If deploying to Heroku make sure to create config variables `manage-app -> settings -> Reveal Config Vars (Under Config Vars)`
+and the fill out value in the following format
+
+Open `.env` and fill out the values: (Not required if deploying to Heroku)
 
 ⚠️ **Note: Never commit or share your token or api keys publicly** ⚠️
 
