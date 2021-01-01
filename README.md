@@ -47,4 +47,12 @@ YOUTUBE_TOKEN= YouTube v3api Token
 
 > Note: The default prefix for commands is `-`
 
-still typing...
+#### 🎵 Music commands
+| Command                  | Description                                                                                                               | Usage                                                             |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| -play                 | Play song through link, query or playlist         | -play [Youtube link or Query] |
+| -add      | Add songs to Guild's playlist                                                                                                   | -add [Youtube link or Query] |
+| -clear      | Clears Guild's playlist                                                                               | -clear |
+| -goto    | skip to a certain song in playlist                                                                                                  | -goto [Song Number] |
+| -leave         | Makes bot leave the voice channel                                                                                                 | -leave                                                     |
+| -nowplaying | Display currently playing song                                                                       | -nowplaying |
