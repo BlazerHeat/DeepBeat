@@ -2,6 +2,6 @@
     "name": "DeepBeat",
     "description": "Simple Discord Music Bot made in NodeJs",
     "repository": "https://github.com/BlazerHeat/DeepBeat",
-    "logo": "logo.png",
+    "logo": "https://i.imgur.com/zkqdOMY.png",
     "keywords": ["discord", "music", "bot", "node"]
   }
