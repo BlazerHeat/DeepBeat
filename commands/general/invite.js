@@ -15,12 +15,7 @@ class InviteCommand extends Command {
     run(client, message, args, prefix) {
         const invite = new MessageEmbed()
             .setAuthor('All Links!', client.user.displayAvatarURL())
-            .setDescription(`
-                [Invite me](https://discord.com/api/oauth2/authorize?client_id=761475247680520193&permissions=3492096&scope=bot)
-                [Support Server](https://discord.gg/gTkmen2)
-                [Github Repo](https://github.com/BlazerHeat/DeepBeat)
-                Discord Bot List - comming soon
-                Website - comming soon
+            .setDescription(`[Invite me](https://discord.com/api/oauth2/authorize?client_id=761475247680520193&permissions=3492096&scope=bot)\n[Support Server](https://discord.gg/gTkmen2)\n[Github Repo](https://github.com/BlazerHeat/DeepBeat)\nDiscord Bot List - comming soon\nWebsite - comming soon
             `)
             .setColor('#FF087F');
         return message.channel.send(invite);
