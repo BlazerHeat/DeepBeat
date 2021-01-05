@@ -27,7 +27,10 @@ After installation finishes you can use `node main.js` to start the bot.
 
 ## ⚙️ Configuration
 
-Open `.env` and fill out the values:
+If deploying to Heroku make sure to create config variables `manage-app -> settings -> Reveal Config Vars (Under Config Vars)`
+and the fill out Keys & Values in the following format and restart the Dyno
+
+Open `.env` and fill out the values: (Not required if deploying to Heroku)
 
 ⚠️ **Note: Never commit or share your token or api keys publicly** ⚠️
 
@@ -44,4 +47,38 @@ YOUTUBE_TOKEN= YouTube v3api Token
 
 > Note: The default prefix for commands is `-`
 
-still typing...
+#### 🎵 Music commands
+| Command| Description|Usage|
+|:---:|:---:|:---:|
+| -play| Play song through link, query or playlist| -play [Youtube link or Query]|
+| -add| Add songs to Guild's playlist| -add [Youtube link or Query]|
+| -clear| Clears Guilds playlist| -clear|
+| -goto| skip to a certain song in playlist| -goto [Song Number]|
+| -leave| Makes bot leave the voice channel| -leave|
+| -nowplaying | Display currently playing song | -nowplaying|
+| -pause| Pause the current playing song| !pause|
+| -resume| Resume the current paused song| -resume|
+| -remove| Removes song from playlist| -remove [Song Number]|
+| -queue| Displays Guilds playlist | -queue|
+| -replay| Replays currently playing song| -replay|
+| -skip| Skip the current playing song| -skip|
+| -search| Search songs on YouTube, then play or add them to Guild's playlist| -search [Query]|
+| -volume| Changes msuic player's volume|-volume [1 - 100]|
+| -rewind| Rewind some amount of seconds in music stream| -rewind [amount in seconds]|
+| -forward| Skip some amount of seconds in music stream| -forward [amount in seconds]|
+
+#### 💡 General commands
+| Command| Description|Usage|
+|:---:|:---:|:---:|
+| -help| Sends you list of commands| -help [command name]|
+| -invite| Gives all bot realted links|-invite|
+| -ping| Display bot ping| -ping|
+| -stats| Gives all bot's system realted information| -stats|
+
+#### ✏️ Settings commands
+| Command| Description|Usage|
+|:---:|:---:|:---:|
+| -setprefix| Changes the prefix used to address bot| -setprefix [New Prefix]|
+| -reset| Used to reset bot settings|-reset|
+| -loopqueue| Enable or Disable playlist looping| -loopqueue|
+| -loopsong| Enable or Disable song looping| -loopsong|
