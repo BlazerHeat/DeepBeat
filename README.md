@@ -56,7 +56,7 @@ YOUTUBE_TOKEN= YouTube v3api Token
 | -goto| skip to a certain song in playlist| -goto [Song Number]|
 | -leave| Makes bot leave the voice channel| -leave|
 | -nowplaying | Display currently playing song | -nowplaying|
-| -pause| Pause the current playing song| !pause|
+| -pause| Pause the current playing song| -pause|
 | -resume| Resume the current paused song| -resume|
 | -remove| Removes song from playlist| -remove [Song Number]|
 | -queue| Displays Guilds playlist | -queue|
