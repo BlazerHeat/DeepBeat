@@ -21,7 +21,7 @@ class RemoveCommand extends Command {
         if(!guild || !guild.playlist || guild.playlist.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Guild Playlist is Empty, Add songs to playlist with \`${prefix}add [Youtube Link or Query]\``));
         if(!args[0]) return message.channel.send(embeds.errorEmbed('Invaild Usage, please try `'+prefix+'remove [song number]`'));
         
-        let { playlist, loopsong } = guild;
+        let { playlist } = guild;
         if(isNaN(args[0]) || args[0] < 1 || args[0] > playlist.length) return message.channel.send(embeds.errorEmbed(`:x: Invaild song number, please check with \`${prefix}queue\``));
         
         let songNumber = parseInt(args[0]);
