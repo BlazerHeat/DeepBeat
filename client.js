@@ -18,6 +18,10 @@ class Client extends DiscordClient {
     autoLeaveVoice(){
         return require('./modules/autoLeaveVoice')(this);
     }
+
+    showDblStats(){
+        return require('./modules/dblStats')(this);
+    }
 }
 
 module.exports = Client;
