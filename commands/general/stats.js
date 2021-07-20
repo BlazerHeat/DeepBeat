@@ -30,9 +30,9 @@ class InviteCommand extends Command {
                 .addField(`Guilds Streaming :shield: `, `\`${this.client.guilds.cache.size}\``, true)
                 .addField(`Users Serving :busts_in_silhouette: `, `\`${this.client.users.cache.size}\``, true)
                 .addField(`Channels Scanning :file_folder: `, `\`${this.client.channels.cache.filter(x => x.type === 'text').size}\``, true)
-                .addField('CPU <:CPU:793742666759929876>', `\`${cpu}\``, true)
-                .addField('TOTAL MEM <:RAM:793742685731028992>', `\`${(os.totalmem() / (1024 * 1024 * 1024)).toFixed(0)} GB\``, true)
-                .addField('PLATFORM <:platform:793743280063774720>', `\`${platform}\``, true);
+                .addField('CPU <:CPU:866942299699281930>', `\`${cpu}\``, true)
+                .addField('TOTAL MEM <:RAM:866942416485351434>', `\`${(os.totalmem() / (1024 * 1024 * 1024)).toFixed(0)} GB\``, true)
+                .addField('PLATFORM <:OS:866943087859204096>', `\`${platform}\``, true);
             memoryUsagePercent >= Thresold || cpuUsage >= Thresold ? stats.setColor(0xFF0000) : stats.setColor(0x00FF78);
             return message.channel.send(stats);
         });

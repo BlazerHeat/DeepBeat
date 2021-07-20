@@ -29,7 +29,7 @@ class PingCommand extends Command {
             const dbPing = (now - then).toFixed(0);
 
 
-            return message.channel.send(embeds.loveEmbed(`:heartbeat: \`${wsping}ms\` :hourglass: \`${ping}ms\` :stopwatch: \`${uptime}\` <:mongo_database:791551907009265665> \`${dbPing}ms\``));
+            return message.channel.send(embeds.loveEmbed(`:heartbeat: \`${wsping}ms\` :hourglass: \`${ping}ms\` :stopwatch: \`${uptime}\` <:mongo_db:866940013404356608> \`${dbPing}ms\``));
         });
     }
 }
