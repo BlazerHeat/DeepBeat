@@ -24,7 +24,7 @@ class SearchCommand extends Command {
 
         let query = args.join(' ');
 
-        message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:714502501046681733>'));
+        message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:866937759116689418>'));
         let data = await youtube.search(query);
         if (!data || !data.items || data.items.length === 0) return message.channel.send(embeds.errorEmbed(':x: No results found.'));
         else message.channel.send(embeds.infoEmbed(`:ballot_box_with_check: **Songs Found**`));

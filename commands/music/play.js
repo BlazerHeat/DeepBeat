@@ -37,10 +37,10 @@ class PlayCommand extends Command {
         else {
             let query = args.join(' ');
 
-            message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:714502501046681733>'));
+            message.channel.send(embeds.successEmbed('**Searching :mag_right:** `' + query + '` **on** <:youtube:866937759116689418>'));
 
             let results = await youtube.search(query, 1);
-            if (!results || !results.items || results.items.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Song not found on <:youtube:714502501046681733>`));
+            if (!results || !results.items || results.items.length === 0) return message.channel.send(embeds.errorEmbed(`:x: Song not found on <:youtube:866937759116689418>`));
 
             let songData = await ytdl.getInfo(results.items[0].id.videoId);
 

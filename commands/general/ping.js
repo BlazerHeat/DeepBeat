@@ -16,7 +16,7 @@ class PingCommand extends Command {
     run (client, message, args, prefix){ 
 
 
-        return message.channel.send('<a:pinging:715142364074737736> Pinging...').then(async msg => {
+        return message.channel.send('<a:discord_loading:866938284483018763> Pinging...').then(async msg => {
             msg.delete();
             const ping = (msg.createdTimestamp - message.createdTimestamp).toFixed(0);
             const wsping = client.ws.ping;
