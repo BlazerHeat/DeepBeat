@@ -43,7 +43,7 @@ class QueueCommand extends Command {
             for (let i = 1; i <= songs.length; i++) {
                 let song = songs[i - 1];
                 if (song) {
-                    if (i === currentlyplaying) queueList += `\`${i}.\` [${song.title.split(' ').splice(0, maxWords).join(' ')}](${song.url}) | \`${msToTime(parseInt(song.time)*1000)}\` | <a:currently_playing:714791202485960756>\n`;
+                    if (i === currentlyplaying) queueList += `\`${i}.\` [${song.title.split(' ').splice(0, maxWords).join(' ')}](${song.url}) | \`${msToTime(parseInt(song.time)*1000)}\` | <a:currently_playing:866944158925193216>\n`;
                     else queueList += `\`${i}.\` [${song.title.split(' ').splice(0, maxWords).join(' ')}](${song.url}) | \`${msToTime(parseInt(song.time)*1000)}\`\n`;
                 }
             }

@@ -26,7 +26,7 @@ class InviteCommand extends Command {
             cpuUsage = (cpuUsage*100).toFixed(2);
             const stats = new MessageEmbed()
                 .setAuthor(`${client.user.tag} [${client.user.id}]`, client.user.displayAvatarURL())
-                .setDescription(`**System ${memoryUsagePercent >= Thresold || cpuUsage >= Thresold ? "UnHealthy" : "Healthy"}! <a:health:693043046677348474>**\n${cpuUsage}% CPU usage\n${memoryUsagePercent}% Memory usage \`${(memoryUsage / (1024 * 1024)).toFixed(0)} MB\``)
+                .setDescription(`**System ${memoryUsagePercent >= Thresold || cpuUsage >= Thresold ? "UnHealthy" : "Healthy"}! <a:health:866946171732492298>**\n${cpuUsage}% CPU usage\n${memoryUsagePercent}% Memory usage \`${(memoryUsage / (1024 * 1024)).toFixed(0)} MB\``)
                 .addField(`Guilds Streaming :shield: `, `\`${this.client.guilds.cache.size}\``, true)
                 .addField(`Users Serving :busts_in_silhouette: `, `\`${this.client.users.cache.size}\``, true)
                 .addField(`Channels Scanning :file_folder: `, `\`${this.client.channels.cache.filter(x => x.type === 'text').size}\``, true)

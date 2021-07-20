@@ -79,7 +79,7 @@ class SearchCommand extends Command {
                 //add Song to database
                 guild.playlist.push(song);
                 await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: guild.playlist });
-                await message.channel.send(embeds.infoEmbed(`<:upload:714717689528188928> Added \`${song.title}\` to Guild's playlist`));
+                await message.channel.send(embeds.infoEmbed(`<:upload:866946866754617355> Added \`${song.title}\` to Guild's playlist`));
                 music.resetAndAdd(message.guild.id, song);
             }
             else {
@@ -89,7 +89,7 @@ class SearchCommand extends Command {
             }
         } else {
             await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: [song] }, { upsert: true, setDefaultsOnInsert: true });
-            message.channel.send(embeds.infoEmbed('<:upload:714717689528188928> Added Song to Guild\'s PlayList'));
+            message.channel.send(embeds.infoEmbed('<:upload:866946866754617355> Added Song to Guild\'s PlayList'));
             music.resetAndAdd(message.guild.id, song);
         }
         

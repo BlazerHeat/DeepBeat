@@ -58,7 +58,7 @@ class PlayCommand extends Command {
             if (!guild || !guild.playlist || !guild.playlist[0]) {
                 playlist = [song];
                 await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: playlist }, { upsert: true, setDefaultsOnInsert: true });
-                message.channel.send(embeds.infoEmbed(`<:upload:714717689528188928> Added \`${song.title}\` to Guild's playlist`));
+                message.channel.send(embeds.infoEmbed(`<:upload:866946866754617355> Added \`${song.title}\` to Guild's playlist`));
                 music.resetAndAdd(message.guild.id, song);
             } else {
                 playlist = guild.playlist;
@@ -66,7 +66,7 @@ class PlayCommand extends Command {
                 if (!hasSong) {
                     playlist.push(song);
                     await Guilds.findOneAndUpdate({ id: message.guild.id }, { playlist: playlist }, { upsert: true, setDefaultsOnInsert: true });
-                    message.channel.send(embeds.infoEmbed(`<:upload:714717689528188928> Added \`${song.title}\` to Guild's playlist`));
+                    message.channel.send(embeds.infoEmbed(`<:upload:866946866754617355> Added \`${song.title}\` to Guild's playlist`));
                     music.resetAndAdd(message.guild.id, song);
                 } else {
                     let songNumber = await music.getSongNumber(message.guild.id, song);
